@@ -1,0 +1,75 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Calculateur de TJM - Solo Toolkit</title><meta name="description" content="Trouvez le tarif journalier en dessous duquel vous travaillez a perte."><link rel="canonical" href="https://solotoolkit.github.io/outils/tjm.html"><meta property="og:title" content="Calculateur de TJM - Solo Toolkit"><meta property="og:description" content="Trouvez le tarif journalier en dessous duquel vous travaillez a perte."><meta property="og:type" content="website"><style>
+:root{--navy:#1f2a44;--navy2:#16203a;--blue:#2e5aac;--gold:#c9a227;
+--ink:#1c2233;--muted:#5b6478;--line:#e3e8f0;--bg:#f7f9fc;--card:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+a{color:var(--blue)}
+header.site{background:linear-gradient(160deg,var(--navy),var(--navy2));color:#fff}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.nav{display:flex;gap:18px;align-items:center;justify-content:space-between;
+padding:16px 0;flex-wrap:wrap}
+.brand{font-weight:800;letter-spacing:.02em;color:#fff;text-decoration:none;font-size:18px}
+.brand span{color:var(--gold)}
+.nav a.link{color:#dfe6f3;text-decoration:none;font-size:14px}
+.nav a.link:hover{color:#fff}
+.hero{padding:56px 0 64px;max-width:760px}
+.hero h1{font-size:clamp(28px,5vw,44px);line-height:1.15;margin:0 0 14px;letter-spacing:-.01em}
+.hero p{font-size:18px;color:#cfd8e8;margin:0 0 26px}
+.btn{display:inline-block;background:var(--gold);color:#1b1b1b;font-weight:700;
+padding:13px 22px;border-radius:8px;text-decoration:none;border:0;cursor:pointer}
+.btn:hover{filter:brightness(1.05)}
+.btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.45)}
+main{padding:48px 0}
+h2{font-size:26px;margin:44px 0 14px;letter-spacing:-.01em}
+h3{margin:28px 0 8px;font-size:20px}
+p{margin:0 0 14px}
+.muted{color:var(--muted)}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;
+padding:20px;display:flex;flex-direction:column;gap:8px}
+.card h3{margin:0;font-size:18px}
+.card .price{font-weight:700;color:var(--navy)}
+.card .btn{margin-top:auto;text-align:center}
+.card a.buy{background:var(--navy);color:#fff;padding:10px 16px;border-radius:8px;
+text-decoration:none;font-weight:600;font-size:14px;margin-top:10px;text-align:center}
+.badge{display:inline-block;background:#eef2f8;color:var(--navy);border:1px solid var(--line);
+border-radius:999px;padding:3px 10px;font-size:12px;font-weight:600}
+article.guide{background:var(--card);border:1px solid var(--line);border-radius:14px;
+padding:34px;max-width:780px;margin:0 auto}
+article.guide h1{font-size:clamp(26px,4vw,36px);line-height:1.2;margin:0 0 8px}
+article.guide ul{padding-left:20px}
+article.guide li{margin:6px 0}
+.cta{background:linear-gradient(160deg,var(--navy),var(--navy2));color:#fff;border-radius:14px;
+padding:24px;margin:32px 0}
+.cta h3{color:#fff;margin-top:0}
+.cta .btn{margin-top:6px}
+.note{background:#fff8e6;border:1px solid #f0dfae;border-radius:10px;padding:14px 16px;
+font-size:14px;color:#5a4a1e}
+.warn{background:#fdecec;border:1px solid #f3c7c7;border-radius:10px;padding:14px 16px;
+font-size:14px}
+.tool{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px;
+max-width:680px;margin:0 auto}
+.tool label{display:block;font-size:14px;font-weight:600;margin:14px 0 6px}
+.tool input,.tool select{width:100%;padding:11px 12px;border:1px solid #cfd7e4;border-radius:8px;
+font-size:16px;background:#fff}
+.tool output{display:block;margin-top:18px;font-size:15px;background:#f2f5fa;border-radius:10px;
+padding:16px}
+.tool .big{font-size:26px;font-weight:800;color:var(--navy)}
+footer.site{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:14px}
+footer.site nav{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:10px}
+.lang{font-size:13px;color:#cfd8e8;text-decoration:none;border:1px solid rgba(255,255,255,.3);
+padding:4px 9px;border-radius:6px}
+@media(max-width:640px){article.guide{padding:22px}.hero{padding:38px 0 44px}}
+</style></head><body><header class="site"><div class="wrap"><div class="nav"><a class="brand" href="/">Solo <span>Toolkit</span></a><nav style="display:flex;gap:16px;flex-wrap:wrap;align-items:center"><a class="link" href="/guides/">Guides</a><a class="link" href="/outils/urssaf.html">Calculateur</a><a class="link" href="https://payhip.com/SoloToolkit">Boutique</a><a class="lang" href="/en/">EN</a></nav></div></div></header><main class="wrap"><div class="tool"><h1>Calculateur de tarif journalier</h1><p class="muted">Calcul arithmetique : charges annuelles + revenu cible, divises par les jours facturables.</p><label for="charges">Charges annuelles (EUR)</label><input id="charges" type="number" value="12000" step="500" oninput="tjm()"><label for="revenu">Revenu net cible (EUR)</label><input id="revenu" type="number" value="30000" step="500" oninput="tjm()"><label for="jours">Jours facturables par an</label><input id="jours" type="number" value="150" step="5" oninput="tjm()"><output id="out"></output><div class="cta"><h3>Freelance Bookkeeping Spreadsheet</h3><p>Version complete, prete a l'emploi, achat unique sans abonnement.</p><a class="btn" href="https://payhip.com/b/y3uGb">Voir Freelance Bookkeeping Spreadsheet sur Payhip - 15 EUR</a></div></div></main><footer class="site"><div class="wrap"><nav><a href="/mentions-legales.html">Mentions legales</a><a href="/confidentialite.html">Confidentialite</a><a href="/contact.html">Contact</a><a href="https://payhip.com/SoloToolkit">Boutique Payhip</a></nav><div>Solo Toolkit - outils simples pour independants. Information seulement, pas un conseil fiscal ou juridique.</div></div></footer><script>
+function tjm(){
+  const c=parseFloat(document.getElementById('charges').value)||0;
+  const r=parseFloat(document.getElementById('revenu').value)||0;
+  const j=parseFloat(document.getElementById('jours').value)||1;
+  const t=(c+r)/j;
+  document.getElementById('out').innerHTML='<div class="big">'+t.toFixed(0)+' EUR / jour</div>'
+   +'TJM plancher. En dessous, vous ne couvrez ni vos charges ni votre revenu cible.';
+}
+
+tjm();</script></body></html>
