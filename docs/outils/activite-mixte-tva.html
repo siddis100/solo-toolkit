@@ -1,0 +1,114 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Simulateur activite mixte et seuils TVA 2026 - Solo Toolkit</title><meta name="description" content="Cumul vente BIC + services BNC : cotisations ventilées, plafonds 203 100 EUR et 83 600 EUR, alerte de franchissement du seuil de TVA 2026."><link rel="canonical" href="https://siddis100.github.io/solo-toolkit/outils/activite-mixte-tva.html"><meta property="og:title" content="Simulateur activite mixte et seuils TVA 2026 - Solo Toolkit"><meta property="og:description" content="Cumul vente BIC + services BNC : cotisations ventilées, plafonds 203 100 EUR et 83 600 EUR, alerte de franchissement du seuil de TVA 2026."><meta property="og:type" content="website"><style>
+:root{--navy:#1f2a44;--navy2:#16203a;--blue:#2e5aac;--gold:#c9a227;
+--ink:#1c2233;--muted:#5b6478;--line:#e3e8f0;--bg:#f7f9fc;--card:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+a{color:var(--blue)}
+header.site{background:linear-gradient(160deg,var(--navy),var(--navy2));color:#fff}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.nav{display:flex;gap:18px;align-items:center;justify-content:space-between;
+padding:16px 0;flex-wrap:wrap}
+.brand{font-weight:800;letter-spacing:.02em;color:#fff;text-decoration:none;font-size:18px}
+.brand span{color:var(--gold)}
+.nav a.link{color:#dfe6f3;text-decoration:none;font-size:14px}
+.nav a.link:hover{color:#fff}
+.hero{padding:56px 0 64px;max-width:760px}
+.hero h1{font-size:clamp(28px,5vw,44px);line-height:1.15;margin:0 0 14px;letter-spacing:-.01em}
+.hero p{font-size:18px;color:#cfd8e8;margin:0 0 26px}
+.btn{display:inline-block;background:var(--gold);color:#1b1b1b;font-weight:700;
+padding:13px 22px;border-radius:8px;text-decoration:none;border:0;cursor:pointer}
+.btn:hover{filter:brightness(1.05)}
+.btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.45)}
+main{padding:48px 0}
+h2{font-size:26px;margin:44px 0 14px;letter-spacing:-.01em}
+h3{margin:28px 0 8px;font-size:20px}
+p{margin:0 0 14px}
+.muted{color:var(--muted)}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;
+padding:20px;display:flex;flex-direction:column;gap:8px}
+.card h3{margin:0;font-size:18px}
+.card .price{font-weight:700;color:var(--navy)}
+.card .btn{margin-top:auto;text-align:center}
+.card a.buy{background:var(--navy);color:#fff;padding:10px 16px;border-radius:8px;
+text-decoration:none;font-weight:600;font-size:14px;margin-top:10px;text-align:center}
+.badge{display:inline-block;background:#eef2f8;color:var(--navy);border:1px solid var(--line);
+border-radius:999px;padding:3px 10px;font-size:12px;font-weight:600}
+article.guide{background:var(--card);border:1px solid var(--line);border-radius:14px;
+padding:34px;max-width:780px;margin:0 auto}
+article.guide h1{font-size:clamp(26px,4vw,36px);line-height:1.2;margin:0 0 8px}
+article.guide ul{padding-left:20px}
+article.guide li{margin:6px 0}
+.cta{background:linear-gradient(160deg,var(--navy),var(--navy2));color:#fff;border-radius:14px;
+padding:24px;margin:32px 0}
+.cta h3{color:#fff;margin-top:0}
+.cta .btn{margin-top:6px}
+.note{background:#fff8e6;border:1px solid #f0dfae;border-radius:10px;padding:14px 16px;
+font-size:14px;color:#5a4a1e}
+.warn{background:#fdecec;border:1px solid #f3c7c7;border-radius:10px;padding:14px 16px;
+font-size:14px}
+.tool{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px;
+max-width:680px;margin:0 auto}
+.tool label{display:block;font-size:14px;font-weight:600;margin:14px 0 6px}
+.tool input,.tool select{width:100%;padding:11px 12px;border:1px solid #cfd7e4;border-radius:8px;
+font-size:16px;background:#fff}
+.tool output{display:block;margin-top:18px;font-size:15px;background:#f2f5fa;border-radius:10px;
+padding:16px}
+.tool .big{font-size:26px;font-weight:800;color:var(--navy)}
+footer.site{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:14px}
+footer.site nav{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:10px}
+.lang{font-size:13px;color:#cfd8e8;text-decoration:none;border:1px solid rgba(255,255,255,.3);
+padding:4px 9px;border-radius:6px}
+@media(max-width:640px){article.guide{padding:22px}.hero{padding:38px 0 44px}}
+</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Simulateur activite mixte et seuils TVA 2026", "description": "Calcul des cotisations d'une activite mixte vente BIC + services BNC et suivi des seuils de franchise TVA.", "url": "https://siddis100.github.io/solo-toolkit/outils/activite-mixte-tva.html", "applicationCategory": "FinanceApplication", "operatingSystem": "Any (navigateur web)", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR", "url": "https://siddis100.github.io/solo-toolkit/outils/activite-mixte-tva.html"}}</script></head><body><header class="site"><div class="wrap"><div class="nav"><a class="brand" href="/">Solo <span>Toolkit</span></a><nav style="display:flex;gap:16px;flex-wrap:wrap;align-items:center"><a class="link" href="/guides/">Guides</a><a class="link" href="/outils/urssaf.html">Calculateur</a><a class="link" href="https://payhip.com/SoloToolkit">Boutique</a><a class="lang" href="/en/">EN</a></nav></div></div></header><main class="wrap"><div class="tool"><h1>Simulateur activite mixte et seuils TVA 2026</h1><p class="muted">Cumul vente BIC + services BNC : cotisations ventilees, double plafond micro, risque de franchissement du seuil de franchise TVA.</p><p class="note">Taux 2026 verifies le 2026/11/08 (service-public.fr F36232, F23267). Les seuils de TVA affiches (85 000 EUR / 37 500 EUR) sont ceux de 2025 reconduits : a verifier sur impots.gouv.fr avant toute decision.</p><label for="vente">Chiffre d'affaires vente de marchandises (EUR / an)</label><input id="vente" type="number" value="20000" min="0" step="500" oninput="calc()"><label for="services">Chiffre d'affaires services (EUR / an)</label><input id="services" type="number" value="30000" min="0" step="500" oninput="calc()"><label for="typeServices">Nature des services</label><select id="typeServices"><option value="bnc" selected>BNC non reglementee (25,6 %)</option><option value="service_bic">Services BIC (21,2 %)</option><option value="bnc_cipav">BNC reglementee Cipav (23,2 %)</option></select><output id="out"></output><p class="note" style="margin-top:16px">Activite mixte : chaque chiffre d'affaires se declare separement, avec son propre taux et son propre plafond. Additionner les deux puis appliquer un taux unique produit une estimation fausse.</p><p class="note">Information seulement : ce contenu ne constitue pas un conseil fiscal ou juridique. Verifiez les regles en vigueur sur les sites officiels (urssaf.fr, service-public.fr, impots.gouv.fr).</p><div class="cta"><span class="badge">BEST-SELLER / TOUT-EN-UN</span><h3>Simulateur activite mixte et seuils TVA</h3><p>7 onglets Excel et Google Sheets : recettes, achats, cotisations URSSAF, franchise TVA, kilometrage, dashboard et parametres. Achat unique, aucun abonnement, vos chiffres restent chez vous.</p><a class="btn" href="https://payhip.com/b/8wf14">Pack Cockpit - 24 EUR</a> <a class="btn ghost" href="https://payhip.com/SoloToolkit">Voir les autres outils</a><p style="margin:14px 0 0;font-size:14px">Code <b>PACK20</b> : -15 % au paiement.</p></div><div class="note" style="margin:20px 0"><b>Gratuit : Kit Facture Auto-Entrepreneur 2026.</b> Modele pret a remplir + checklist des mentions obligatoires. 0 EUR, sans abonnement. <a href="https://payhip.com/b/7hvzk">Telecharger le kit gratuit</a>.</div><div class="note" style="margin:20px 0"><b>Outils gratuits et conformite 2026-2027</b><ul style="margin:10px 0 8px;padding-left:20px"><li><b>Compte bancaire professionnel gratuit</b> : separe le flux pro du flux perso, obligatoire pour un livre de recettes propre - <a href="https://www.urssaf.fr/portail/home/independant.html">https://www.urssaf.fr/portail/home/independant.html</a></li><li><b>Plateforme de facturation electronique agreee (PDP)</b> : la reforme 2026-2027 impose la facture electronique entre assujettis ; une PDP agreee transmet vos factures au PPF - <a href="https://www.economie.gouv.fr/facturation-electronique-entreprises">https://www.economie.gouv.fr/facturation-electronique-entreprises</a></li><li><b>Annuaire officiel des PDP agreees</b> : verifier qu&#x27;un prestataire est bien agree par l&#x27;Etat avant de signer - <a href="https://www.economie.gouv.fr/facturation-electronique-entreprises">https://www.economie.gouv.fr/facturation-electronique-entreprises</a></li></ul><span style="font-size:13px">La facturation electronique devient obligatoire entre entreprises assujetties a la TVA (calendrier 2026-2027). Solo Toolkit ne vend aucun service de facturation : verifiez la liste officielle des plateformes agreees avant tout abonnement.</span></div></div></main><footer class="site"><div class="wrap"><nav><a href="/mentions-legales.html">Mentions legales</a><a href="/confidentialite.html">Confidentialite</a><a href="/contact.html">Contact</a><a href="https://payhip.com/SoloToolkit">Boutique Payhip</a></nav><div>Solo Toolkit - outils simples pour independants. Information seulement, pas un conseil fiscal ou juridique.</div></div></footer><script>
+const R = {vente: 12.3, bnc: 21.2, service_bic: 21.2, bnc_cipav: 23.2};
+const PLAFOND_VENTE = 203100, PLAFOND_SERVICES = 83600;
+const TVA_VENTE = 85000, TVA_SERVICES = 37500;
+function eur(v){return v.toLocaleString('fr-FR',{minimumFractionDigits:2,maximumFractionDigits:2})+' EUR';}
+function bar(pct, label, seuil){
+  const p = Math.max(0, Math.min(100, pct));
+  const col = pct>=100 ? '#b42318' : (pct>=90 ? '#b45309' : '#177245');
+  return '<div style="margin:10px 0"><div style="display:flex;justify-content:space-between;'
+    +'font-size:13px;color:#5b6478"><span>'+label+'</span><span>'+pct.toFixed(1)+' % de '
+    +eur(seuil)+'</span></div><div style="background:#e3e8f0;border-radius:999px;height:10px;'
+    +'overflow:hidden"><div style="width:'+p+'%;height:100%;background:'+col+'"></div></div></div>';
+}
+function calc(){
+  const vente = parseFloat(document.getElementById('vente').value)||0;
+  const services = parseFloat(document.getElementById('services').value)||0;
+  const type = document.getElementById('typeServices').value;
+  const cotVente = vente*R.vente/100;
+  const cotServices = services*R[type]/100;
+  const cot = cotVente+cotServices;
+  const total = vente+services;
+  const partVente = total ? vente/total*100 : 0;
+  const pv = vente/PLAFOND_VENTE*100;
+  const ps = services/PLAFOND_SERVICES*100;
+  const tv = vente/TVA_VENTE*100;
+  const ts = services/TVA_SERVICES*100;
+  let statut = '<b style="color:#177245">OK</b> : sous les plafonds micro et les seuils de TVA.';
+  if (Math.max(pv,ps) >= 100)
+    statut = '<b style="color:#b42318">PLAFOND DEPASSE</b> : sortie du regime micro au 1er janvier suivant.';
+  else if (Math.max(tv,ts) >= 100)
+    statut = '<b style="color:#b42318">TVA A FACTURER</b> : seuil de franchise franchi, passage des le 1er jour du mois.';
+  else if (Math.max(tv,ts) >= 90)
+    statut = '<b style="color:#b45309">ATTENTION SEUIL TVA</b> : vous approchez du seuil de franchise.';
+  document.getElementById('out').innerHTML =
+    '<div class="big">'+eur(cot)+'</div>cotisations estimees sur '+eur(total)+' de CA<br><br>'
+    +'Vente BIC : '+eur(vente)+' x 12,3 % = <b>'+eur(cotVente)+'</b><br>'
+    +'Services ('+type.replace('_',' ')+') : '+eur(services)+' x '+R[type].toString().replace('.',',')+' % = <b>'+eur(cotServices)+'</b><br>'
+    +'Revenu avant impot : <b>'+eur(total-cot)+'</b> (soit '
+    +(total?((total-cot)/total*100).toFixed(1).replace('.',','):'0')+' % du CA)<br>'
+    +'Part vente : '+partVente.toFixed(0)+' % du CA total'
+    +bar(pv,'Plafond micro vente (203 100 EUR)',PLAFOND_VENTE)
+    +bar(ps,'Plafond micro services (83 600 EUR)',PLAFOND_SERVICES)
+    +bar(tv,'Seuil TVA vente (85 000 EUR, A VERIFIER)',TVA_VENTE)
+    +bar(ts,'Seuil TVA services (37 500 EUR, A VERIFIER)',TVA_SERVICES)
+    +'<div style="margin-top:12px">'+statut+'</div>';
+}
+['vente','services'].forEach(id=>document.getElementById(id).addEventListener('input',calc));
+document.getElementById('typeServices').addEventListener('change',calc);
+
+calc();</script></body></html>
