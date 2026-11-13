@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulateur Cotisations URSSAF 2026 &amp; Checklist Facture Auto-Entrepreneur (Gratuit)</title><link rel="canonical" href="https://siddis100.github.io/solo-toolkit/simulateur-urssaf-2026.html"><meta property="og:url" content="https://siddis100.github.io/solo-toolkit/simulateur-urssaf-2026.html">
+<meta name="description" content="Calculez en direct vos cotisations URSSAF 2026 en micro-entreprise (vente, services BIC, BNC) et vérifiez les mentions obligatoires de votre facture. Outils gratuits Solo Toolkit.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Simulateur Cotisations URSSAF 2026 &amp; Checklist Facture Auto-Entrepreneur">
+<meta property="og:description" content="Deux outils gratuits pour indépendants : estimation des cotisations micro-entreprise 2026 et contrôle des mentions obligatoires de facture.">
+<meta name="theme-color" content="#1f2a44">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231f2a44'/%3E%3Ctext x='32' y='44' font-family='Segoe UI,Arial' font-size='34' font-weight='700' fill='%23c9a227' text-anchor='middle'%3EST%3C/text%3E%3C/svg%3E">
+<style>
+  :root{
+    --navy:#1f2a44; --navy-2:#16203a; --blue:#2e5aac; --gold:#c9a227;
+    --light:#eef2f8; --muted:#9fb0c9; --card:#243152; --line:rgba(238,242,248,.14);
+    --ok:#3f9d7a; --warn:#d18b3c; --radius:14px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:linear-gradient(180deg,var(--navy) 0%,var(--navy-2) 100%);
+    color:var(--light); font:16px/1.6 "Segoe UI",system-ui,-apple-system,Arial,sans-serif;
+    min-height:100vh;
+  }
+  a{color:var(--gold)}
+  .wrap{width:min(1120px,92vw); margin:0 auto}
+  header.hero{padding:56px 0 28px; border-bottom:1px solid var(--line)}
+  .brand{
+    display:inline-block; background:#fff; color:var(--navy); font-weight:700;
+    letter-spacing:.14em; font-size:12px; padding:7px 14px; border-radius:6px;
+    border:2px solid var(--blue); text-decoration:none;
+  }
+  h1{font-size:clamp(26px,4.2vw,44px); line-height:1.15; margin:18px 0 10px; max-width:22em}
+  .lede{color:var(--muted); max-width:62ch; margin:0 0 22px}
+  .pills{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:8px}
+  .pill{border:1px solid var(--line); border-radius:999px; padding:5px 12px; font-size:13px; color:var(--muted)}
+  .pill strong{color:var(--light)}
+  main{padding:34px 0 10px}
+  section{margin:0 0 34px}
+  h2{font-size:clamp(20px,2.6vw,28px); margin:0 0 6px}
+  h2 span{color:var(--gold)}
+  .sub{color:var(--muted); margin:0 0 18px; font-size:14.5px}
+  .grid{display:grid; grid-template-columns:1.05fr .95fr; gap:20px}
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:22px; box-shadow:0 10px 30px rgba(0,0,0,.18);
+  }
+  .card h3{margin:0 0 14px; font-size:15px; letter-spacing:.08em; text-transform:uppercase; color:var(--gold)}
+  label{display:block; font-size:13.5px; color:var(--muted); margin:0 0 6px}
+  input[type=number],select{
+    width:100%; padding:11px 12px; border-radius:10px; border:1px solid var(--line);
+    background:#1b2540; color:var(--light); font:inherit; font-size:15px;
+  }
+  input[type=number]:focus,select:focus{outline:2px solid var(--blue); outline-offset:1px}
+  .field{margin-bottom:14px}
+  .row{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+  .switch{display:flex; align-items:center; gap:10px; margin:6px 0 16px; font-size:14px; color:var(--muted)}
+  .switch input{width:18px; height:18px; accent-color:var(--blue)}
+  .result{background:linear-gradient(160deg,rgba(46,90,172,.28),rgba(36,49,82,.2)); border-radius:12px; padding:16px; border:1px solid rgba(46,90,172,.5)}
+  .result .big{font-size:clamp(28px,4vw,40px); font-weight:800; color:#fff; line-height:1.1}
+  .result .big small{font-size:14px; font-weight:600; color:var(--muted); margin-left:6px}
+  .kpis{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:14px}
+  .kpi{background:rgba(238,242,248,.05); border-radius:10px; padding:10px 12px}
+  .kpi dt{font-size:12px; color:var(--muted); margin:0}
+  .kpi dd{margin:2px 0 0; font-weight:700; font-size:17px}
+  .bars{margin-top:16px}
+  .bar{display:grid; grid-template-columns:1fr auto; gap:4px 10px; font-size:12.5px; color:var(--muted); margin-bottom:8px}
+  .bar i{display:block; height:8px; border-radius:6px; background:var(--blue); grid-column:1/-1}
+  .bar i.gold{background:var(--gold)}
+  .note{font-size:12.5px; color:var(--muted); margin-top:14px}
+  .detail{font-size:12.5px; color:var(--light); margin:14px 0 0; padding-top:11px;
+    border-top:1px solid var(--line); line-height:1.55}
+  .bar em, .detail strong{color:var(--light); font-style:normal; font-weight:600}
+  #rateCfp{color:var(--gold, #c9a227)}
+  ul.check{list-style:none; padding:0; margin:0}
+  ul.check li{border-bottom:1px solid var(--line); padding:9px 0}
+  ul.check label{display:flex; gap:11px; align-items:flex-start; color:var(--light); font-size:14.5px; margin:0; cursor:pointer; text-transform:none; letter-spacing:0}
+  ul.check input{appearance:none; flex:0 0 20px; width:20px; height:20px; border:2px solid var(--muted); border-radius:6px; margin:1px 0 0; cursor:pointer; position:relative}
+  ul.check input:checked{background:var(--ok); border-color:var(--ok)}
+  ul.check input:checked::after{content:"✓"; position:absolute; inset:0; display:grid; place-items:center; color:#fff; font-size:13px; font-weight:700}
+  .progress{height:10px; border-radius:999px; background:rgba(238,242,248,.12); overflow:hidden; margin:16px 0 10px}
+  .progress i{display:block; height:100%; width:0; background:linear-gradient(90deg,var(--blue),var(--gold)); transition:width .25s ease}
+  .status{font-weight:700}
+  .status.ok{color:#7fd3b3}
+  .status.mid{color:var(--gold)}
+  .status.low{color:#e08b6a}
+  .cta{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px}
+  .cta a{
+    display:block; text-decoration:none; color:var(--light); background:#1b2540;
+    border:1px solid var(--line); border-left:4px solid var(--blue); border-radius:12px; padding:14px 16px;
+    transition:transform .15s ease, border-color .15s ease;
+  }
+  .cta a:hover{transform:translateY(-2px); border-color:var(--gold)}
+  .cta strong{display:block; font-size:15px; margin-bottom:2px}
+  .cta small{color:var(--muted)}
+  .cta .price{color:var(--gold); font-weight:700; font-size:13px}
+  .store{display:inline-block; margin-top:16px; background:var(--gold); color:#1b2540; font-weight:800;
+    padding:12px 20px; border-radius:10px; text-decoration:none}
+  footer{border-top:1px solid var(--line); padding:26px 0 40px; color:var(--muted); font-size:13px}
+  footer a{color:var(--muted)}
+  @media (max-width:860px){ .grid{grid-template-columns:1fr} header.hero{padding-top:34px} .row{grid-template-columns:1fr} }
+  @media print{ body{background:#fff;color:#111} .card{box-shadow:none;border-color:#ccc} .cta,footer .nogap{display:none} }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <a class="brand" href="https://payhip.com/SoloToolkit" rel="noopener">SOLO TOOLKIT</a>
+    <h1>Simulateur Cotisations URSSAF 2026 &amp; Checklist Facture Auto-Entrepreneur</h1>
+    <p class="lede">Deux outils gratuits, sans inscription : estimez vos cotisations micro-entreprise en quelques secondes, puis vérifiez qu'aucune mention obligatoire ne manque sur votre facture.</p>
+    <div class="pills">
+      <span class="pill"><strong>0 €</strong> · sans compte</span>
+      <span class="pill">Calcul <strong>100 % local</strong></span>
+      <span class="pill">Taux <strong>modifiables</strong></span>
+      <span class="pill">Mise à jour <strong>2026</strong></span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="simulateur">
+    <h2>1. Simulateur de cotisations <span>micro-entreprise 2026</span></h2>
+    <p class="sub">Saisissez votre chiffre d'affaires encaissé. Le calcul est instantané et reste dans votre navigateur.</p>
+
+    <div class="grid">
+      <form class="card" id="calc" autocomplete="off">
+        <h3>Vos paramètres</h3>
+
+        <div class="field">
+          <label for="activite">Type d'activité</label>
+          <select id="activite">
+            <option value="vente">Vente de marchandises (BIC)</option>
+            <option value="service" selected>Prestations de services (BIC)</option>
+            <option value="liberal">Activité libérale (BNC)</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="ca">Chiffre d'affaires annuel encaissé (€)</label>
+            <input id="ca" type="number" min="0" step="100" value="30000" inputmode="decimal">
+          </div>
+          <div class="field">
+            <label for="taux">Taux de cotisations (%)</label>
+            <input id="taux" type="number" min="0" max="60" step="0.1" value="21.2" inputmode="decimal">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="cfp">Contribution formation (%)</label>
+            <input id="cfp" type="number" min="0" max="1" step="0.05" value="0.1" inputmode="decimal">
+          </div>
+          <div class="field">
+            <label for="acre">ACRE (1re année)</label>
+            <select id="acre">
+              <option value="1" selected>Sans ACRE</option>
+              <option value="0.5">Avec ACRE (−50 %)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="periode">Périodicité de déclaration</label>
+          <select id="periode">
+            <option value="12" selected>Annuelle</option>
+            <option value="4">Trimestrielle</option>
+            <option value="1">Mensuelle</option>
+          </select>
+        </div>
+
+        <div class="result" aria-live="polite">
+          <div class="big" id="cotis">0 €<small>de cotisations estimées</small></div>
+          <dl class="kpis">
+            <div class="kpi"><dt>Net estimé avant impôt</dt><dd id="net">0 €</dd></div>
+            <div class="kpi"><dt>À provisionner par mois</dt><dd id="mois">0 €</dd></div>
+            <div class="kpi"><dt>Taux effectif (cotisations + CFP)</dt><dd id="effectif">0 %</dd></div>
+            <div class="kpi"><dt>Plafond micro 2026</dt><dd id="plafond">—</dd></div>
+          </dl>
+          <div class="bars">
+            <div class="bar"><span>Cotisations sociales <em id="rateCotis">12,3 %</em></span><span id="lblCotis">0 €</span><i id="barCotis" style="width:0"></i></div>
+            <div class="bar"><span>Formation professionnelle CFP <em id="rateCfp">0,1 %</em></span><span id="lblCfp">0 €</span><i class="gold" id="barCfp" style="width:0"></i></div>
+          </div>
+          <p class="detail" id="detail"></p>
+        </div>
+
+        <p class="note">Taux par défaut : vente 12,3 % · services BIC 21,2 % · BNC 26,1 % (2026, à confirmer). La contribution à la formation professionnelle (CFP) est de 0,1 % pour les ventes et prestations de service, 0,2 % pour les activités libérales. Estimation indicative, hors taxes et hors versement libératoire. Vérifiez toujours les taux officiels sur <a href="https://www.urssaf.fr" rel="noopener nofollow">urssaf.fr</a>.</p>
+      </form>
+
+      <div class="card">
+        <h3>Comment lire votre résultat</h3>
+        <p>Les cotisations sociales sont calculées sur le chiffre d'affaires <strong>encaissé</strong>, pas sur les factures émises. Un impayé ne génère donc pas de cotisations.</p>
+        <p>Le <strong>net estimé</strong> correspond à ce qu'il vous reste avant impôt sur le revenu et avant vos charges réelles (matériel, logiciels, déplacements).</p>
+        <p>Le <strong>plafond micro-entreprise</strong> dépend de l'activité : 188 700 € pour la vente de marchandises, 77 700 € pour les prestations de services et activités libérales (valeurs 2023-2025, revalorisées périodiquement). Au-delà, vous basculez au régime réel.</p>
+        <p class="note">Astuce : provisionnez la somme « à provisionner par mois » sur un compte séparé dès chaque encaissement. C'est la méthode la plus simple pour ne jamais être pris de court à la déclaration.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="checklist">
+    <h2>2. Checklist des <span>mentions obligatoires</span> d'une facture</h2>
+    <p class="sub">Cochez ce que votre facture contient déjà. Les points manquants s'affichent immédiatement.</p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Ma facture contient…</h3>
+        <ul class="check" id="liste">
+          <li><label><input type="checkbox" data-mention="Identité complète du vendeur (nom, adresse)"> Identité complète du vendeur : nom, adresse, contact</label></li>
+          <li><label><input type="checkbox" data-mention="Numéro SIRET"> Numéro SIRET (et SIREN si société)</label></li>
+          <li><label><input type="checkbox" data-mention="Numéro de facture unique et chronologique"> Numéro de facture unique et chronologique</label></li>
+          <li><label><input type="checkbox" data-mention="Date d'émission et date de la prestation"> Date d'émission et date de réalisation de la prestation</label></li>
+          <li><label><input type="checkbox" data-mention="Identité du client"> Identité et adresse du client</label></li>
+          <li><label><input type="checkbox" data-mention="Description détaillée des prestations"> Description détaillée des biens ou prestations</label></li>
+          <li><label><input type="checkbox" data-mention="Quantité et prix unitaire hors taxes"> Quantité, prix unitaire hors taxes, total HT</label></li>
+          <li><label><input type="checkbox" data-mention="TVA ou mention de franchise en base"> TVA applicable ou mention « TVA non applicable, art. 293 B du CGI »</label></li>
+          <li><label><input type="checkbox" data-mention="Délai et pénalités de paiement"> Délai de paiement et pénalités de retard</label></li>
+          <li><label><input type="checkbox" data-mention="Indemnité forfaitaire de recouvrement de 40 euros"> Indemnité forfaitaire de recouvrement (40 €) pour les professionnels</label></li>
+        </ul>
+        <div class="progress"><i id="progressBar"></i></div>
+        <p class="status" id="statut">0 / 10 mentions vérifiées</p>
+        <p class="note">Cette liste reprend les mentions les plus courantes. Elle ne remplace pas un conseil juridique : certaines activités (BTP, médecine, assurances) ont des obligations supplémentaires.</p>
+      </div>
+
+      <div class="card">
+        <h3>Ce qui manque encore</h3>
+        <ul id="manquants" style="padding-left:18px; margin:0 0 14px"></ul>
+        <p id="felicitations" hidden>Votre facture semble complète. Conservez-en une copie pendant 10 ans.</p>
+        <p class="note">Besoin d'un modèle déjà structuré avec toutes ces mentions ? Le modèle PDF prêt à compléter évite les oublis :</p>
+        <p><a class="store" href="https://payhip.com/b/7hvzk" rel="noopener">Voir le modèle Mentions Facture 2026 — 5 €</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="outils">
+    <h2>3. Les outils Solo Toolkit</h2>
+    <p class="sub">Fichiers prêts à l'emploi, achat unique, aucun abonnement. Les produits gratuits se téléchargent immédiatement.</p>
+    <div class="cta">
+      <a href="https://payhip.com/b/GlWE2" rel="noopener">
+        <strong>Calculateur cotisations URSSAF 2026</strong>
+        <small>Excel &amp; Google Sheets · plafond micro · rappel pénalité</small>
+        <span class="price">12 €</span>
+      </a>
+      <a href="https://payhip.com/b/7hvzk" rel="noopener">
+        <strong>Mentions obligatoires facture 2026</strong>
+        <small>Modèle PDF conforme + liste de contrôle</small>
+        <span class="price">5 €</span>
+      </a>
+      <a href="https://payhip.com/b/y3uGb" rel="noopener">
+        <strong>Freelance Bookkeeping Spreadsheet</strong>
+        <small>Revenus, dépenses, trésorerie 12 mois, taxes</small>
+        <span class="price">15 €</span>
+      </a>
+      <a href="https://payhip.com/b/jSQq0" rel="noopener">
+        <strong>Freelance Bookkeeping Starter</strong>
+        <small>Suivi revenus / dépenses simplifié</small>
+        <span class="price">Gratuit</span>
+      </a>
+      <a href="https://payhip.com/b/XrwWA" rel="noopener">
+        <strong>ADHD Daily Top 3 Tracker</strong>
+        <small>3 priorités par jour, énergie et humeur</small>
+        <span class="price">Gratuit</span>
+      </a>
+      <a href="https://payhip.com/SoloToolkit" rel="noopener">
+        <strong>Toute la boutique</strong>
+        <small>Catalogue complet, téléchargement immédiat</small>
+        <span class="price">payhip.com/SoloToolkit</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2>Questions fréquentes</h2>
+    <div class="card">
+      <h3>Est-ce vraiment gratuit ?</h3>
+      <p>Oui. Ce simulateur et cette checklist fonctionnent sans compte, sans inscription et sans envoyer vos données : tout le calcul se fait dans votre navigateur.</p>
+      <h3>Les taux sont-ils officiels ?</h3>
+      <p>Les valeurs par défaut sont indicatives et modifiables. Les taux de cotisations évoluent chaque année : vérifiez-les sur urssaf.fr avant de valider une déclaration.</p>
+      <h3>Pourquoi mes cotisations diffèrent-elles de mon échéance URSSAF ?</h3>
+      <p>L'URSSAF applique votre taux réel, l'ACRE si vous en bénéficiez, et parfois des régularisations. Ce simulateur donne un ordre de grandeur pour provisionner, pas un montant de recouvrement.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Solo Toolkit</strong> — outils simples pour indépendants. <a href="https://payhip.com/SoloToolkit" rel="noopener">payhip.com/SoloToolkit</a></p>
+    <p class="nogap">Outil d'information sans valeur contractuelle. Ne constitue pas un conseil fiscal ou juridique. Données traitées localement, aucun cookie de suivi.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  var TAUX = { vente: 12.3, service: 21.2, liberal: 26.1 };
+  var CFP = { vente: 0.1, service: 0.1, liberal: 0.2 };
+  var PLAFOND = { vente: 188700, service: 77700, liberal: 77700 };
+
+  var $ = function(id){ return document.getElementById(id); };
+  var eur = function(n){
+    return new Intl.NumberFormat("fr-FR", { style:"currency", currency:"EUR", maximumFractionDigits:0 }).format(n);
+  };
+
+  var activite = $("activite"), ca = $("ca"), taux = $("taux"), cfp = $("cfp"),
+      acre = $("acre"), periode = $("periode");
+
+  function calc(){
+    var type = activite.value;
+    var caVal = Math.max(0, parseFloat(ca.value) || 0);
+    var tauxVal = Math.min(60, Math.max(0, parseFloat(taux.value) || 0));
+    var cfpVal = Math.min(1, Math.max(0, parseFloat(cfp.value) || 0));
+    var acreVal = parseFloat(acre.value);
+    var per = parseInt(periode.value, 10) || 12;
+
+    var brut = caVal * tauxVal / 100;
+    var cotis = brut * acreVal;
+    var formation = caVal * cfpVal / 100;
+    var total = cotis + formation;
+    var net = Math.max(0, caVal - total);
+    var effectif = caVal > 0 ? (total / caVal) * 100 : 0;
+
+    $("cotis").innerHTML = eur(total) + '<small>de cotisations estimées</small>';
+    $("net").textContent = eur(net);
+    $("mois").textContent = eur(total / 12);
+    var pct = function(v){ return v.toFixed(1).replace(".", ",") + " %"; };
+    $("effectif").textContent = pct(effectif);
+    $("rateCotis").textContent = pct(tauxVal) + (acreVal < 1 ? " × ACRE" : "");
+    $("rateCfp").textContent = pct(cfpVal);
+    $("detail").innerHTML = "Détail : <strong>" + eur(cotis) + "</strong> de cotisations sociales (" +
+      pct(tauxVal) + (acreVal < 1 ? ", ACRE −50 %" : "") + ") + <strong>" + eur(formation) +
+      "</strong> de formation professionnelle CFP (" + pct(cfpVal) + ") = <strong>" + eur(total) +
+      "</strong>, soit <strong>" + pct(effectif) + "</strong> du chiffre d'affaires.";
+    $("plafond").textContent = eur(PLAFOND[type]) + (caVal > PLAFOND[type] ? " ⚠" : "");
+
+    $("lblCotis").textContent = eur(cotis);
+    $("lblCfp").textContent = eur(formation);
+    var max = Math.max(total, 1);
+    $("barCotis").style.width = (cotis / max * 100).toFixed(1) + "%";
+    $("barCfp").style.width = (formation / max * 100).toFixed(1) + "%";
+
+    // Déclaration : montant à déclarer par échéance
+    var parEcheance = caVal / per;
+    $("cotis").title = "Montant à déclarer par échéance : " + eur(parEcheance);
+  }
+
+  function onActivite(){
+    var type = activite.value;
+    taux.value = TAUX[type].toFixed(1);
+    cfp.value = CFP[type].toFixed(1);
+    calc();
+  }
+
+  activite.addEventListener("change", onActivite);
+  [ca, taux, cfp, acre, periode].forEach(function(el){
+    el.addEventListener("input", calc);
+    el.addEventListener("change", calc);
+  });
+
+  // Checklist
+  var boxes = Array.prototype.slice.call(document.querySelectorAll("#liste input[type=checkbox]"));
+  var manquants = $("manquants");
+  var statut = $("statut");
+  var bar = $("progressBar");
+  var felic = $("felicitations");
+
+  function refresh(){
+    var done = boxes.filter(function(b){ return b.checked; });
+    var pct = boxes.length ? done.length / boxes.length * 100 : 0;
+    bar.style.width = pct + "%";
+
+    statut.textContent = done.length + " / " + boxes.length + " mentions vérifiées";
+    statut.className = "status " + (pct === 100 ? "ok" : (pct >= 60 ? "mid" : "low"));
+    felic.hidden = pct !== 100;
+
+    manquants.innerHTML = "";
+    boxes.forEach(function(b){
+      if (b.checked) return;
+      var li = document.createElement("li");
+      li.textContent = b.getAttribute("data-mention");
+      manquants.appendChild(li);
+    });
+    if (!manquants.children.length){
+      var li = document.createElement("li");
+      li.textContent = "Aucun oubli détecté sur les 10 points contrôlés.";
+      manquants.appendChild(li);
+    }
+  }
+
+  boxes.forEach(function(b){ b.addEventListener("change", refresh); });
+
+  // Lien profond : #checklist déplie et met le focus
+  if (location.hash === "#checklist"){
+    var first = boxes[0];
+    if (first) first.focus({ preventScroll: true });
+  }
+
+  onActivite();
+  refresh();
+
+  // Raccourci clavier : "/" place le curseur sur le CA
+  document.addEventListener("keydown", function(e){
+    if (e.key === "/" && document.activeElement !== ca){
+      e.preventDefault();
+      ca.focus();
+      ca.select();
+    }
+  });
+
+  // JSON-LD minimal (SEO)
+  var ld = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Simulateur Cotisations URSSAF 2026 & Checklist Facture Auto-Entrepreneur",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Tout navigateur",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+    "publisher": { "@type": "Organization", "name": "Solo Toolkit", "url": "https://payhip.com/SoloToolkit" }
+  };
+  var s = document.createElement("script");
+  s.type = "application/ld+json";
+  s.textContent = JSON.stringify(ld);
+  document.head.appendChild(s);
+})();
+</script>
+</body>
+</html>
