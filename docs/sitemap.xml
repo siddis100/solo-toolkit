@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://siddis100.github.io/solo-toolkit/affiliation.html</loc><lastmod>2026-11-15</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://siddis100.github.io/solo-toolkit/confidentialite.html</loc><lastmod>2026-11-15</lastmod><changefreq>weekly</changefreq><priority>0.3</priority></url>
   <url><loc>https://siddis100.github.io/solo-toolkit/contact.html</loc><lastmod>2026-11-15</lastmod><changefreq>weekly</changefreq><priority>0.3</priority></url>
   <url><loc>https://siddis100.github.io/solo-toolkit/en/guides/calcul-cotisations-urssaf-2026.html</loc><lastmod>2026-11-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
@@ -67,6 +68,5 @@
   <url><loc>https://siddis100.github.io/solo-toolkit/produits/km-tracker.html</loc><lastmod>2026-11-15</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://siddis100.github.io/solo-toolkit/produits/tva-franchise.html</loc><lastmod>2026-11-15</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://siddis100.github.io/solo-toolkit/produits/urssaf-calculator.html</loc><lastmod>2026-11-15</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://siddis100.github.io/solo-toolkit/programme-affiliation.html</loc><lastmod>2026-11-15</lastmod><changefreq>weekly</changefreq><priority>0.3</priority></url>
   <url><loc>https://siddis100.github.io/solo-toolkit/simulateur-urssaf-2026.html</loc><lastmod>2026-11-15</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
 </urlset>
