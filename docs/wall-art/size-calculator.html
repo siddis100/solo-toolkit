@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Frame Size Calculator — Printable Wall Art | Solo Toolkit</title>
+<meta name="description" content="Free interactive frame size calculator: get the exact print size and ratio (2:3, 3:4, 4:5, ISO A2/A3/A4, 11x14) for your sofa, bed or console at 300 DPI.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Solo Toolkit">
+<meta property="og:title" content="Free Frame Size Calculator — Printable Wall Art | Solo Toolkit">
+<meta property="og:description" content="Free interactive frame size calculator: get the exact print size and ratio (2:3, 3:4, 4:5, ISO A2/A3/A4, 11x14) for your sofa, bed or console at 300 DPI.">
+<meta property="og:url" content="https://siddis100.github.io/solo-toolkit/wall-art/size-calculator.html">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Frame Size Calculator — Printable Wall Art | Solo Toolkit">
+<meta name="twitter:description" content="Free interactive frame size calculator: get the exact print size and ratio (2:3, 3:4, 4:5, ISO A2/A3/A4, 11x14) for your sofa, bed or console at 300 DPI.">
+<link rel="canonical" href="https://siddis100.github.io/solo-toolkit/wall-art/size-calculator.html">
+<style>
+:root{--ink:#211d19;--muted:#6a635c;--bg:#fbf8f4;--card:#fff;--accent:#8a5533;--line:#e9dfd3}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);line-height:1.55;font-family:ui-sans-serif,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:inherit}
+.wrap{width:min(1080px,100%);margin:0 auto;padding:0 18px}
+.promo{background:linear-gradient(120deg,#2c211a,#8a5533);color:#fff;padding:14px 0;box-shadow:0 2px 14px #0002}
+.promo .wrap{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-content:space-between}
+.promo strong{display:block;font-size:1.02rem;letter-spacing:.01em}
+.promo span{font-size:.86rem;opacity:.9}
+.promo-cta{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#3b271a;border-radius:999px;padding:10px 18px;font-weight:700;text-decoration:none;white-space:nowrap}
+.promo-cta:hover{background:#fff4e9}
+header{padding:46px 0 18px;text-align:center}
+.eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;color:var(--accent);font-weight:800}
+h1{font-size:clamp(1.9rem,6.4vw,3.2rem);line-height:1.1;margin:12px 0 12px;letter-spacing:-.035em;font-family:Georgia,"Times New Roman",serif;font-weight:600}
+h2{font-size:1.24rem;margin:0 0 6px;font-family:Georgia,"Times New Roman",serif;font-weight:600}
+.lede{max-width:660px;margin:0 auto;color:var(--muted);font-size:1rem}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:20px;box-shadow:0 8px 24px #2c211a0a}
+fieldset{border:0;padding:0;margin:0 0 18px}
+fieldset:last-child{margin-bottom:0}
+legend,label.field{display:block;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:8px;padding:0}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.seg button,button.chip{font:inherit;font-size:.86rem;font-weight:700;cursor:pointer;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:9px 14px;transition:background .16s ease,color .16s ease,border-color .16s ease}
+.seg button:hover,button.chip:hover{border-color:var(--accent)}
+.seg button[aria-pressed="true"],button.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.note{font-size:.8rem;color:var(--muted);margin:8px 0 0}
+.inputs{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:640px){.inputs{grid-template-columns:1fr 1fr}}
+input[type=number]{width:100%;font:inherit;font-size:1rem;padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+input[type=range]{width:100%;accent-color:var(--accent)}
+.range-head{display:flex;justify-content:space-between;gap:10px;font-size:.88rem;font-weight:700}
+.range-head span:last-child{color:var(--accent)}
+.preview{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:20px;box-shadow:0 8px 24px #2c211a0a}
+.preview svg{display:block;width:100%;height:auto;max-height:340px}
+.preview figcaption{color:var(--muted);font-size:.82rem;margin-top:10px;text-align:center}
+.result{background:#fff;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;padding:16px;margin-top:14px}
+.result .tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+.result .pick{font-family:Georgia,"Times New Roman",serif;font-size:1.34rem;line-height:1.25;margin:0 0 6px}
+.result .detail{color:var(--muted);font-size:.9rem;margin:0}
+.result .detail strong{color:var(--ink)}
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.88rem}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
+th{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);white-space:nowrap}
+td:first-child{font-weight:800;color:var(--accent);white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 16px}
+.cta-box{margin:26px 0 46px;border-radius:16px;padding:22px;background:linear-gradient(120deg,#2c211a,#8a5533);color:#fff}
+.cta-box p{font-family:Georgia,"Times New Roman",serif;font-size:1.12rem;margin:0 0 16px;max-width:720px}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:11px 18px;font-weight:800;font-size:.88rem;text-decoration:none}
+.btn-main{background:#fff;color:#3b271a}
+.btn-main:hover{background:#fff4e9}
+.btn-alt{background:transparent;color:#fff;border:1px solid #ffffff80}
+.btn-alt:hover{background:#ffffff1f}
+.code{font-size:.85rem;opacity:.92;margin:14px 0 0}
+.code b{background:#ffffff24;border-radius:6px;padding:2px 7px;letter-spacing:.06em}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);font-size:.82rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px 20px;justify-content:space-between}
+footer a{color:var(--accent)}
+@media(max-width:520px){.panel,.preview{padding:14px}.seg button,button.chip{padding:8px 11px;font-size:.8rem}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Solo Toolkit Frame Size Calculator","url":"https://siddis100.github.io/solo-toolkit/wall-art/size-calculator.html","applicationCategory":"LifestyleApplication","operatingSystem":"Any","description":"Free interactive frame size calculator: get the exact print size and ratio (2:3, 3:4, 4:5, ISO A2/A3/A4, 11x14) for your sofa, bed or console at 300 DPI.","inLanguage":"en","isAccessibleForFree":true,"featureList":["Inches and centimetres conversion","Sofa, bed and console presets","Single frame, diptych and triptych layouts","2:3, 3:4, 4:5, ISO A2/A3/A4 and 11x14 ratio recommendation","300 DPI pixel dimensions"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","url":"https://siddis100.github.io/solo-toolkit/wall-art/size-calculator.html","mainEntity":[{"@type":"Question","name":"What size print should I use above an 84-inch sofa?","acceptedAnswer":{"@type":"Answer","text":"For an 84-inch sofa, aim for artwork 50 to 63 inches wide (60–75% of the sofa). A single 20 × 30 in (2:3) print, a diptych of two 16 × 20 in (4:5) prints, or a triptych of three 11 × 14 in prints all work well. Hang the bottom edge 6–8 inches above the sofa back."}},{"@type":"Question","name":"What is the difference between 2:3 and 3:4 print ratios?","acceptedAnswer":{"@type":"Answer","text":"2:3 is taller and narrower (20 × 30 in / 50.8 × 76.2 cm), while 3:4 is a little wider (18 × 24 in / 45.72 × 60.96 cm). Choose 2:3 for portraits and dramatic gallery walls, 3:4 for a classic photo-frame look."}},{"@type":"Question","name":"What are the ISO A2, A3 and A4 print sizes?","acceptedAnswer":{"@type":"Answer","text":"ISO A2 is 42 × 59.4 cm (16.54 × 23.39 in), A3 is 29.7 × 42 cm (11.69 × 16.54 in) and A4 is 21 × 29.7 cm (8.27 × 11.69 in). All three share the same √2 ratio, so the artwork scales without cropping."}},{"@type":"Question","name":"Why print at 300 DPI?","acceptedAnswer":{"@type":"Answer","text":"300 DPI keeps fine detail crisp at normal viewing distance. Our 2:3 file is 6000 × 9000 px for a 20 × 30 in print; stretching the same art to 40 × 60 in would drop the effective resolution to 150 DPI."}}]}</script>
+</head>
+<body>
+<aside class="promo"><div class="wrap"><div><strong>Free printable wall art — $0, no strings attached</strong><span>Use code SOLO25 for 25% OFF your next order.</span></div><a class="promo-cta" href="https://payhip.com/b/NmxvW" rel="noopener noreferrer" target="_blank">Grab the freebie →</a></div></aside>
+<main class="wrap">
+<header><span class="eyebrow">Solo Toolkit · Free decor tool</span><h1>Frame Size Calculator</h1><p class="lede">Free interactive frame size calculator: get the exact print size and ratio (2:3, 3:4, 4:5, ISO A2/A3/A4, 11x14) for your sofa, bed or console at 300 DPI.</p></header>
+<section class="panel" aria-label="Calculator inputs"><fieldset><legend>1 · Unit</legend><div class="seg"><button type="button" data-unit="in">Inches</button><button type="button" data-unit="cm">cm</button></div></fieldset><fieldset><legend>2 · Furniture</legend><div class="seg"><button type="button" data-furn="sofa">Canapé / Sofa</button><button type="button" data-furn="bed">Lit / Bed</button><button type="button" data-furn="console">Console / Commode</button></div><p class="note">Quick presets: <button type="button" class="chip" data-preset="loveseat" data-preset-furn="sofa">Loveseat 60″</button><button type="button" class="chip" data-preset="sofa" data-preset-furn="sofa">Standard Sofa 84″</button><button type="button" class="chip" data-preset="sectional" data-preset-furn="sofa">Sectional 108″</button><button type="button" class="chip" data-preset="queen" data-preset-furn="bed">Queen Bed 60″</button><button type="button" class="chip" data-preset="king" data-preset-furn="bed">King Bed 76″</button></p></fieldset><fieldset><legend>3 · Layout</legend><div class="seg"><button type="button" data-layout="1">1 frame</button><button type="button" data-layout="2">Diptyque (2)</button><button type="button" data-layout="3">Triptyque (3)</button></div></fieldset><div class="inputs"><div><label class="field" for="width">Furniture width</label><input id="width" type="number" min="24" max="180" step="0.5" value="84" inputmode="decimal"><span class="note" id="width-unit">in</span></div><div><label class="field" for="gap">Spacing between frames</label><input id="gap" type="number" min="0" max="12" step="0.05" value="2.5" inputmode="decimal"><span class="note" id="gap-hint">Recommended: 2–3 in between frames</span></div></div><fieldset style="margin-top:18px"><div class="range-head"><label class="field" for="coverage">Width covered (decor rule: 60–75%)</label><span id="coverage-val">68%</span></div><input id="coverage" type="range" min="60" max="75" step="1" value="68"><p class="note">Target total artwork width: <span id="target">—</span></p></fieldset></section>
+<figure class="preview"><svg id="scene" viewBox="0 0 96 60" role="img" aria-label="Frame layout preview"></svg><figcaption id="caption">To scale · frames cover 68% of the furniture width.</figcaption><div class="result" aria-live="polite"><span class="tag">Recommended format</span><p class="pick" id="pick-ratio">—</p><p class="detail" id="pick-px">—</p></div></figure>
+<section class="panel" aria-labelledby="sizes-title"><h2 id="sizes-title">300 DPI conversion chart — all 5 print ratios</h2><p class="note">Every file is ready to print at home or at your local shop.</p><div class="filters" aria-label="Filter ratios"><button type="button" class="chip" data-filter="all">All sizes</button><button type="button" class="chip" data-filter="2:3">2:3</button><button type="button" class="chip" data-filter="3:4">3:4</button><button type="button" class="chip" data-filter="4:5">4:5</button><button type="button" class="chip" data-filter="ISO">ISO</button><button type="button" class="chip" data-filter="11x14">11x14</button></div><div class="table-wrap"><table><thead><tr><th scope="col">Ratio</th><th scope="col">Inches</th><th scope="col">Centimetres</th><th scope="col">Pixels @ 300 DPI</th></tr></thead><tbody><tr data-ratio-row="2:3"><td>2:3</td><td>20 × 30 in</td><td>50.8 × 76.2 cm</td><td>6000 × 9000 px</td></tr><tr data-ratio-row="3:4"><td>3:4</td><td>18 × 24 in</td><td>45.72 × 60.96 cm</td><td>5400 × 7200 px</td></tr><tr data-ratio-row="4:5"><td>4:5</td><td>16 × 20 in</td><td>40.64 × 50.8 cm</td><td>4800 × 6000 px</td></tr><tr data-ratio-row="ISO"><td>ISO A2</td><td>16.54 × 23.39 in</td><td>42 × 59.4 cm</td><td>4961 × 7016 px</td></tr><tr data-ratio-row="ISO"><td>ISO A3</td><td>11.69 × 16.54 in</td><td>29.7 × 42 cm</td><td>3508 × 4961 px</td></tr><tr data-ratio-row="ISO"><td>ISO A4</td><td>8.27 × 11.69 in</td><td>21 × 29.7 cm</td><td>2480 × 3508 px</td></tr><tr data-ratio-row="11x14"><td>11x14</td><td>11 × 14 in</td><td>27.94 × 35.56 cm</td><td>3300 × 4200 px</td></tr></tbody></table></div></section>
+<aside class="cta-box"><p>Every Solo Toolkit printable includes all 5 print ratios in 300 DPI — zero cropping guesswork.</p><div class="cta-row"><a class="btn btn-main" href="https://payhip.com/b/NmxvW" rel="noopener noreferrer" target="_blank">Get the Freebie — $0 →</a><a class="btn btn-alt" href="./index.html">Browse all prints</a><a class="btn btn-alt" href="https://payhip.com/SoloToolkit" rel="noopener noreferrer" target="_blank">Solo Toolkit shop</a></div><p class="code">Save <b>SOLO25</b> for 25% off your next order (-25 %).</p></aside>
+</main>
+<footer><div class="wrap"><span>© 2026 Solo Toolkit</span><span><a href="./index.html">Printable wall art</a> · <a href="wall-art-sitemap.xml">Sitemap</a></span></div></footer>
+<script>
+
+(function(){
+  "use strict";
+  var RATIOS={
+    "2:3":{hw:1.5,inch:[20,30],cm:[50.8,76.2],px:[6000,9000]},
+    "3:4":{hw:4/3,inch:[18,24],cm:[45.72,60.96],px:[5400,7200]},
+    "4:5":{hw:1.25,inch:[16,20],cm:[40.64,50.8],px:[4800,6000]},
+    "ISO":{hw:Math.SQRT2,inch:[16.54,23.39],cm:[42,59.4],px:[4961,7016]},
+    "11x14":{hw:14/11,inch:[11,14],cm:[27.94,35.56],px:[3300,4200]}
+  };
+  var PREF={
+    sofa:{1:"2:3",2:"4:5",3:"11x14"},
+    bed:{1:"3:4",2:"4:5",3:"2:3"},
+    console:{1:"ISO",2:"3:4",3:"11x14"}
+  };
+  var FURN={sofa:32,bed:26,console:30};
+  var PRESETS={
+    loveseat:60,sofa:84,sectional:108,queen:60,king:76
+  };
+  var state={unit:"in",furn:"sofa",layout:1,width:84,coverage:0.675,gap:2.5};
+  var $=function(id){return document.getElementById(id)};
+  var clamp=function(v,a,b){return Math.min(b,Math.max(a,v))};
+  var fmt=function(inches){
+    if(state.unit==="cm")return Math.round(inches*2.54)+" cm";
+    var v=Math.round(inches*10)/10;
+    return (v%1===0?v.toFixed(0):v.toFixed(1))+" in";
+  };
+  function setPressed(group,key){
+    var nodes=document.querySelectorAll("["+group+"]");
+    for(var i=0;i<nodes.length;i++){
+      nodes[i].setAttribute("aria-pressed",nodes[i].getAttribute(group)===String(key)?"true":"false");
+    }
+  }
+  function syncInputs(){
+    $("width").value=state.unit==="cm"?Math.round(state.width*2.54):Math.round(state.width*10)/10;
+    $("width-unit").textContent=state.unit==="cm"?"cm":"in";
+    $("gap").value=state.unit==="cm"?6.35:2.5;
+    $("gap-unit").textContent=state.unit==="cm"?"cm":"in";
+    $("gap-hint").textContent=state.unit==="cm"?"Recommended: 5–7 cm between frames":"Recommended: 2–3 in between frames";
+  }
+  function render(){
+    var n=state.layout, w=state.width, gap=state.gap;
+    var target=w*state.coverage;
+    var frameW=Math.max(4,(target-(n-1)*gap)/n);
+    var rid=PREF[state.furn][n], r=RATIOS[rid];
+    var frameH=frameW*r.hw;
+    var lo=w*0.6, hi=w*0.75;
+    $("target").textContent=fmt(lo)+" – "+fmt(hi)+" ("+fmt(w)+" furniture)";
+    $("coverage-val").textContent=Math.round(state.coverage*100)+"%";
+    $("pick-ratio").textContent=rid+" — "+r.inch[0]+" × "+r.inch[1]+" in / "+r.cm[0]+" × "+r.cm[1]+" cm";
+    $("pick-px").innerHTML="High-res file: <strong>"+r.px[0]+" × "+r.px[1]+" px</strong> · each printed frame ≈ "+fmt(frameW)+" wide";
+    var fh=FURN[state.furn], pad=6, above=6;
+    var sceneW=w+pad*2, sceneH=pad+frameH+above+fh+pad;
+    var fy=pad, fyMeuble=pad+frameH+above;
+    var total=n*frameW+(n-1)*gap, x0=(sceneW-total)/2;
+    var s="<rect x='"+pad+"' y='"+fyMeuble+"' width='"+w+"' height='"+fh+"' rx='1.5' fill='#e9dfd3' stroke='#a9927b'/>";
+    s+="<line x1='"+(w/2+pad)+"' y1='"+pad+"' x2='"+(w/2+pad)+"' y2='"+(fyMeuble-1)+"' stroke='#c7b6a4' stroke-width='.35' stroke-dasharray='1.4 1.2'/>";
+    for(var i=0;i<n;i++){
+      var x=x0+i*(frameW+gap);
+      s+="<rect x='"+x+"' y='"+fy+"' width='"+frameW+"' height='"+frameH+"' fill='#fff' stroke='#8a5533' stroke-width='.7'/>";
+      s+="<rect x='"+(x+0.7)+"' y='"+(fy+0.7)+"' width='"+(frameW-1.4)+"' height='"+(frameH-1.4)+"' fill='none' stroke='#e9dfd3' stroke-width='.35'/>";
+      s+="<text x='"+(x+frameW/2)+"' y='"+(fy+frameH/2)+"' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-size='3.2' fill='#6a635c'>"+rid+"</text>";
+    }
+    s+="<text x='"+(w/2+pad)+"' y='"+(fyMeuble+fh/2)+"' text-anchor='middle' dominant-baseline='middle' font-family='sans-serif' font-size='3' fill='#6a635c'>"+state.furn+" · "+fmt(w)+"</text>";
+    var svg=$("scene");
+    svg.setAttribute("viewBox","0 0 "+sceneW.toFixed(2)+" "+sceneH.toFixed(2));
+    svg.setAttribute("aria-label",n+" "+rid+" frames above a "+fmt(w)+" "+state.furn+", each about "+fmt(frameW)+" wide");
+    svg.innerHTML=s;
+    $("caption").textContent="To scale · frames cover "+Math.round(state.coverage*100)+"% of the furniture width, with "+fmt(gap)+" spacing.";
+  }
+  document.addEventListener("click",function(e){
+    var b=e.target.closest("button");
+    if(!b)return;
+    if(b.hasAttribute("data-unit")){
+      state.unit=b.getAttribute("data-unit");
+      setPressed("data-unit",state.unit);syncInputs();render();return;
+    }
+    if(b.hasAttribute("data-furn")){
+      state.furn=b.getAttribute("data-furn");
+      if(state.furn==="sofa"&&state.width<48)state.width=84;
+      if(state.furn==="bed"&&state.width<48)state.width=60;
+      if(state.furn==="console"&&state.width>72)state.width=48;
+      setPressed("data-furn",state.furn);syncInputs();render();return;
+    }
+    if(b.hasAttribute("data-layout")){
+      state.layout=parseInt(b.getAttribute("data-layout"),10);
+      setPressed("data-layout",state.layout);render();return;
+    }
+    if(b.hasAttribute("data-preset")){
+      state.width=PRESETS[b.getAttribute("data-preset")];
+      if(b.hasAttribute("data-preset-furn")){
+        state.furn=b.getAttribute("data-preset-furn");
+        setPressed("data-furn",state.furn);
+      }
+      syncInputs();render();return;
+    }
+    if(b.hasAttribute("data-filter")){
+      var f=b.getAttribute("data-filter"), rows=document.querySelectorAll("[data-ratio-row]");
+      for(var i=0;i<rows.length;i++){
+        rows[i].hidden=f!=="all"&&rows[i].getAttribute("data-ratio-row")!==f;
+      }
+      setPressed("data-filter",f);return;
+    }
+  });
+  $("width").addEventListener("change",function(){
+    var v=parseFloat(this.value);
+    if(!isFinite(v)){syncInputs();return}
+    if(state.unit==="cm")v=v/2.54;
+    state.width=clamp(v,24,180);syncInputs();render();
+  });
+  $("gap").addEventListener("change",function(){
+    var v=parseFloat(this.value);
+    if(!isFinite(v)){syncInputs();return}
+    if(state.unit==="cm")v=v/2.54;
+    state.gap=clamp(v,0,12);syncInputs();render();
+  });
+  $("coverage").addEventListener("input",function(){
+    state.coverage=parseInt(this.value,10)/100;render();
+  });
+  setPressed("data-unit",state.unit);
+  setPressed("data-furn",state.furn);
+  setPressed("data-layout",state.layout);
+  setPressed("data-filter","all");
+  syncInputs();render();
+})();
+
+</script>
+</body>
+</html>
